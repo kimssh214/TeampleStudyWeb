@@ -1,0 +1,11 @@
+spring:
+    mvc:
+        view:
+            prefix: /WEB-INF/jsp/
+            suffix: .jsp
+
+    datasource:
+        url: jdbc:mysql://175.212.197.249:13306/study
+        username: study
+        password: study!23
+        driver-class-name: com.mysql.jdbc.Driver
