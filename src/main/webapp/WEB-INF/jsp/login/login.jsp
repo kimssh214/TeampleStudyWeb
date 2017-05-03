@@ -5,14 +5,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- CSS -->
 
-<link href="/framework/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
-<link href="/framework/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="framework/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
+<link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-<link href="/user/css/TeampleStudyWeb.css" rel="stylesheet" media="screen">
+<link href="user/css/TeampleStudyWeb.css" rel="stylesheet" media="screen">
 
 <!-- JS -->
-<script src="/user/js/jquery-3.2.1.min.js"></script>
-<script src="/user/js/common.js"></script>
+<script src="user/js/jquery-3.2.1.min.js"></script>
+<script src="user/js/common.js"></script>
 <script>
 	
 
@@ -26,7 +26,7 @@
 		}
 		
 		$("#btn_login").click(function() {
-			var url = "/login/check";
+			var url = "login/check";
 			var id = $("input[name=id]").val();
 			var pw = $("input[name=pw]").val();
 			
@@ -90,7 +90,7 @@
 					<font class="panel-heading-text">Sign In</font>
 				</div>
 				<div class="panel-body">
-					<form id="login_form" class="form-horizontal" action="/login/check" method="post" accept-charset="utf-8">
+					<form id="login_form" class="form-horizontal" method="post" accept-charset="utf-8">
 						<div id="login_form_panel">
 							<div>KSH's Profiles</div>
 							<div>
