@@ -1,10 +1,10 @@
-package kr.co.teamplestudyweb.controller.main;
+package kr.co.teamplestudyweb.controller.view.main;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MainController {
+public class MainViewController {
 
 	@RequestMapping(value = "/main")
 	public String login() {

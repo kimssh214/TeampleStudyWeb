@@ -1,1 +1,50 @@
 @CHARSET "EUC-KR";
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background: radial-gradient(#882A91, #330f34) fixed;
+}
+
+/* 전체 패널 */
+#main_panel {
+	text-align: center;
+	width: 100%;
+	height: 100%;
+}
+
+/* 중앙 패널 */
+#center_panel {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 500px;
+	height: 230px;
+	margin-top: -115px;
+	margin-left: -250px;
+}
+
+/* 로그인 패널 */
+#login_panel {
+	margin: 0px;
+	padding: 0px !important;
+	width: 500px !important;
+	height: 230px !important;
+}
+
+#login_form_panel>div {
+	margin-bottom: 10px;
+}
+
+.panel-heading-text {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+/* Bootstrap 수정 */
+.panel-heading {
+	padding: 5px 15px !important;
+}
