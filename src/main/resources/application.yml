@@ -1,11 +1,30 @@
 spring:
-    mvc:
-        view:
-            prefix: /WEB-INF/jsp/
-            suffix: .jsp
-
-    datasource:
-        url: jdbc:mysql://175.212.197.249:13306/study
-        username: study
-        password: study!23
-        driver-class-name: com.mysql.jdbc.Driver
+#Web 관련 설정
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+#DB 설정
+  datasource:
+    url: jdbc:mysql://175.212.197.249:13306/db_study
+    username: study
+    password: study!23
+    driver-class-name: com.mysql.jdbc.Driver
+#Console 출력 관련 설정    
+  output:
+    ansi:
+      enabled: always
+#Redis 설정
+  redis:
+    host: localhost
+    password: redis!23
+    port: 6379
+    
+#Logging 설정
+logging:
+  level: 
+      kr:
+        co:
+          teamplestudyweb:
+                          web: debug
+     

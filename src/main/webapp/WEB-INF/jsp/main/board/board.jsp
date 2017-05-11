@@ -13,8 +13,8 @@
 <!-- JS -->
 <script src="user/js/jquery-3.2.1.min.js" charset="utf-8"></script>
 <script src="user/js/common.js" charset="utf-8"></script>
-<script src="framework/bootstrap-table/dist/bootstrap-table.min.js"></script>
-<script src="framework/bootstrap-table/dist/locale/bootstrap-table-ko-KR.min.js"></script>
+<script src="framework/bootstrap-table/dist/bootstrap-table.min.js" charset="utf-8"></script>
+<script src="framework/bootstrap-table/dist/locale/bootstrap-table-ko-KR.min.js" charset="utf-8"></script>
 <script>
 	$(document).ready(function() {
 		$("#logout").click(function() {
@@ -22,9 +22,18 @@
 			logout(id);
 		});
 
-		$("#board").click(function() {
-			location.href = "board";
-
+		$('#table').bootstrapTable({
+			url : 'board/read',
+			columns : [ {
+				field : 'id',
+				title : 'Item ID'
+			}, {
+				field : 'name',
+				title : 'Item Name'
+			}, {
+				field : 'price',
+				title : 'Item Price'
+			}, ]
 		});
 	});
 </script>
@@ -41,7 +50,17 @@
 				<div class="menu_item" id="logout">로그아웃</div>
 			</div>
 			<div id="center_panel">
-				<div id="main_panel"></div>
+				<div id="main_panel">
+					<table data-toggle="table" data-url="board/read">
+						<thead>
+							<tr>
+								<th data-field="undefined">Item ID</th>
+								<th data-field="Item Name">Item Name</th>
+								<th data-field="Item Price">Item Price</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
 			</div>
 		</div>
 

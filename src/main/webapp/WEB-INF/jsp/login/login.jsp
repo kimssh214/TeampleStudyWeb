@@ -11,80 +11,65 @@
 <link href="user/css/TeampleStudyWeb.css" rel="stylesheet" media="screen">
 
 <!-- JS -->
-<script src="user/js/jquery-3.2.1.min.js"></script>
-<script src="user/js/common.js"></script>
+<script src="user/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script src="user/js/common.js" charset="utf-8"></script>
 <script>
-	
-
 	$(document).ready(function() {
-		var User;//사용자 정보
-		
-		//사용자 정보 객체 선언
-		var UserInfo = function (id, pw){
-			this.id = id;
-			this.pw = pw;
-		}
-		
-		$("#btn_login").click(function() {
-			var url = "login/check";
-			var id = $("input[name=id]").val();
-			var pw = $("input[name=pw]").val();
-			
-			//사용자 객체 생성
-			User = new UserInfo(id, pw);
-			if(UserInfoChk(User.id, User.pw)){
-				$.ajax({
-					url : url,
-					type : "POST",
-					cache : false,
-					timeout : 30000,
-					contentType : "application/json; charset=UTF-8",
-					dataType : "json",
-					data : JSON.stringify(User),
-					success : function(data) {
-						var dataInfo = eval(data);
-						
-						if(dataInfo.errCode == 200){
-							//세션처리 전 임시 코드
-							location.href= dataInfo.nextPage;
-						}else{
-							alert("아이디 또는 패스워드를 확인하여 주시기 바랍니다.");
-							User = null;
-						}
-						
-					},
-					error:function(request,status,error){
-			       	 alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-			       }
 
-				});
+		//패스워드 입력 후 엔터 시 자동 로그인
+		$("input[name=pw]").keydown(function(key) {
+			if (key.keyCode == 13) {
+				login();
 			}
 		});
-	});
-	function UserInfoChk(userId, userPw){
-		var id = userId;
-		var pw = userPw;
-		
-		if(id.length<3){
-			alert("아이디를 확인 하여 주시기 바랍니다.");
-			return false;
-		}
-		
-		if(pw.length<3){
-			alert("패스워드를 확인 하여 주시기 바랍니다.");
-			return false;
-		}
-		
-		return true;
-		
-	}
 
+		$("#btn_login").click(function() {
+			login();
+		});
+	});
+
+	function login() {
+		var url = "login/check";
+		var id = $("input[name=id]").val();
+		var pw = $("input[name=pw]").val();
+
+		//사용자 객체 생성
+		User = new UserInfo(id, pw);
+		if (UserInfoChk(User.id, User.pw)) {
+			$.ajax({
+				url : url,
+				type : "POST",
+				cache : false,
+				timeout : 30000,
+				contentType : "application/json; charset=UTF-8",
+				dataType : "json",
+				data : JSON.stringify(User),
+				success : function(data) {
+					var dataInfo = eval(data);
+
+					if (dataInfo.errCode == 200) {
+						//세션처리 전 임시 코드
+						location.href = dataInfo.nextPage;
+					} else {
+						alert("아이디 또는 패스워드를 확인하여 주시기 바랍니다.");
+						User = null;
+					}
+
+				},
+				error : function(request, status, error) {
+					alert("code:" + request.status + "\n" + "message:"
+							+ request.responseText + "\n" + "error:" + error);
+				}
+
+			});
+		}
+	}
 </script>
 <title>Sign In</title>
 </head>
 <body>
-	<div id="main_panel">
-		<div id="center_panel">
+	<div id="login_main_panel">
+		<div id="login_center_panel">
 			<div id="login_panel" class="panel panel-default">
 				<div class="panel-heading ">
 					<font class="panel-heading-text">Sign In</font>

@@ -6,18 +6,30 @@ html, body {
 }
 
 body {
-	background: radial-gradient(#882A91, #330f34) fixed;
+	/* background: radial-gradient(#882A91, #330f34) fixed; */
+	background: #1abc9c;
 }
 
-/* 전체 패널 */
-#main_panel {
+/* Bootstrap 수정 */
+.panel-heading {
+	padding: 5px 15px !important;
+}
+
+.panel-heading-text {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+/* 로그인 */
+/* 로그인 전체 패널 */
+#login_main_panel {
 	text-align: center;
 	width: 100%;
 	height: 100%;
 }
 
-/* 중앙 패널 */
-#center_panel {
+/* 로그인 중앙 패널 */
+#login_center_panel {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -33,18 +45,82 @@ body {
 	padding: 0px !important;
 	width: 500px !important;
 	height: 230px !important;
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
 
 #login_form_panel>div {
 	margin-bottom: 10px;
 }
 
-.panel-heading-text {
-	font-size: 20px;
-	font-weight: bolder;
+/* 메인 */
+#wrap_panel {
+	width: 100%;
+	height: 100%;
+	float: left;
 }
 
-/* Bootstrap 수정 */
-.panel-heading {
-	padding: 5px 15px !important;
+#top_panel {
+	background-color: #101010;
+	height: 70px;
+	width: 100%;
+}
+
+#top_menu {
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	background: #141414;
+	background: -moz-linear-gradient(top, #333333 0%, #141414 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333),
+		color-stop(100%, #141414));
+	background: -webkit-linear-gradient(top, #333333 0%, #141414 100%);
+	background: -o-linear-gradient(top, #333333 0%, #141414 100%);
+	background: -ms-linear-gradient(top, #333333 0%, #141414 100%);
+	background: linear-gradient(to bottom, #333333 0%, #141414 100%);
+	width: 100%;
+	height: 70px;
+}
+
+#middle_panel {
+	width: 100%;
+	height: 100%;
+}
+
+#left_panel {
+	background: #141414;
+	background: -moz-linear-gradient(top, #333333 0%, #141414 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333),
+		color-stop(100%, #141414));
+	background: -webkit-linear-gradient(top, #333333 0%, #141414 100%);
+	background: -o-linear-gradient(top, #333333 0%, #141414 100%);
+	background: -ms-linear-gradient(top, #333333 0%, #141414 100%);
+	background: linear-gradient(to bottom, #333333 0%, #141414 100%);
+	width: 200px;
+	height: 100%;
+	float: left;
+}
+
+.menu_item {
+	width: 100%;
+	height: 40px;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+
+.menu_item:HOVER {
+	cursor: pointer;
+	background: #101010;
+}
+
+#center_panel {
+	/* background-color: blue; */
+	width: 100%;
+	height: 100%;
+	padding-left: 200px;
+}
+
+#main_panel {
+	float: left;
 }

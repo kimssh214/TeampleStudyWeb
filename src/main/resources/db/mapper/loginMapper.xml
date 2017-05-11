@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.teamplestudyweb.web.dao.LoginDao">
+	<resultMap type="kr.co.teamplestudyweb.web.vo.LoginVo" id="CheckloginInfoResultMap">
+		<result property="id" column="ID" />
+		<result property="pw" column="PW" />
+		<result property="userName" column="USER_NAME" />
+		<result property="createDate" column="CREATE_DATE" />
+		<result property="lastLoginDate" column="LAST_LOGIN_DATE" />
+		<result property="pwErrCnt" column="PW_ERR_CNT" />
+		<result property="authType" column="AUTH_TYPE" />
+	</resultMap>
+	<!-- /* select dual */ -->
+	<select id="checkLoginInfo" parameterType="kr.co.teamplestudyweb.web.vo.LoginVo"
+		resultType="java.lang.Integer">
+		SELECT COUNT(0) CHECK_LOGIN FROM USER_INFO
+		WHERE ID = #{id} AND PW = MD5(#{pw})
+	</select>
+
+	<update id="updatePwErrCnt" parameterType="kr.co.teamplestudyweb.web.vo.LoginVo">
+		UPDATE USER_INFO
+		SET PW_ERR_CNT = PW_ERR_CNT + 1 WHERE ID = #{id}
+	</update>
+	
+	<update id="updateLastLoginDate" parameterType="kr.co.teamplestudyweb.web.vo.LoginVo">
+		UPDATE USER_INFO 
+		SET LAST_LOGIN_DATE = SYSDATE() WHERE ID = #{id}
+	</update>
+	
+	<update id="updateResetPwErrCnt" parameterType="kr.co.teamplestudyweb.web.vo.LoginVo">
+		UPDATE USER_INFO
+		SET PW_ERR_CNT = 0 WHERE ID = #{id}
+	</update>
+	
+</mapper>

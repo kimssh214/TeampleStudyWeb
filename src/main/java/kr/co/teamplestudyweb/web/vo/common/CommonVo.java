@@ -1,4 +1,4 @@
-package kr.co.teamplestudyweb.vo.common;
+package kr.co.teamplestudyweb.web.vo.common;
 
 public class CommonVo {
 	private String errCode;
