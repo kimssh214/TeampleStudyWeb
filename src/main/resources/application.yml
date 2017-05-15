@@ -6,10 +6,12 @@ spring:
       suffix: .jsp
 #DB 설정
   datasource:
-    url: jdbc:mysql://175.212.197.249:13306/db_study
+    url: jdbc:log4jdbc:mysql://175.212.197.249:13306/db_study
+    #url: jdbc:mysql://175.212.197.249:13306/db_study
     username: study
     password: study!23
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    #driver-class-name: com.mysql.jdbc.Driver
 #Console 출력 관련 설정    
   output:
     ansi:

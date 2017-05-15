@@ -6,15 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <!-- CSS -->
 
-<link href="framework/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
-<link href="framework/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<link href="framework/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" media="screen">
+<link href="webjars/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="screen">
+<link href="webjars/bootstrap/3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="webjars/bootstrap-table/1.11.1/dist/bootstrap-table.min.css" rel="stylesheet" media="screen">
 <link href="user/css/TeampleStudyWeb.css" rel="stylesheet" media="screen">
 <!-- JS -->
-<script src="user/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+<script src="webjars/jquery/3.2.1/dist/jquery.min.js" charset="utf-8"></script>
+<script src="webjars/bootstrap-table/1.11.1/dist/bootstrap-table.min.js"></script>
+<script src="webjars/bootstrap-table/1.11.1/dist/locale/bootstrap-table-ko-KR.min.js"></script>
 <script src="user/js/common.js" charset="utf-8"></script>
-<script src="framework/bootstrap-table/dist/bootstrap-table.min.js"></script>
-<script src="framework/bootstrap-table/dist/locale/bootstrap-table-ko-KR.min.js"></script>
 <script>
 	$(document).ready(function() {
 		$("#logout").click(function() {
